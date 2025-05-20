@@ -18,7 +18,10 @@ const ColorPicker = ({
           onChange(e.target.value)
         }
       />
-      <label htmlFor="color">
+      <label
+        htmlFor="color"
+        className="font-semibold hover:scale-105 hover:cursor-pointer duration-300"
+      >
         {color}
         <div className="w-16 h-16" style={{ backgroundColor: color }}></div>
       </label>
