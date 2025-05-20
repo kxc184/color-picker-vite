@@ -1,6 +1,6 @@
 # Objective
 
-Implement a Color Picker feature where a user can select any color, and the app will display the top 3 closest Sherwin-Williams paint colors. Each match should be shown as a color chip with:
+Implement a Color Picker feature where a user can select any color, and the app will display the top 3 closest Sherwin-Williams paint colors.
 
 ## 📁 Project Structure
 
