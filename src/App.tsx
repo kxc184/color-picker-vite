@@ -17,6 +17,13 @@ function App() {
         Use color chips to display top 3 Colors closest to the color you
         selected
       </p>
+      <a
+        target="blank"
+        href="https://www.sherwin-williams.com/en-us/color/color-tools/color-visualizer/active/color-wall/section/sherwin-williams-colors"
+        className="p-4 bg-blue-500 text-xl text-white hover:scale-105 duration-300 hover:shadow-xl "
+      >
+        Checkout Sherwins Paint Color Visualizer
+      </a>
     </main>
   );
 }

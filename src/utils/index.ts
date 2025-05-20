@@ -1,6 +1,8 @@
 import { sherwinPaintColors } from "../data/color";
 import type { ColorMatch } from "../types/color";
 
+// Converts the input hex color to an RGB object (e.g., { r: 255, g: 87, b: 51 }).
+// This is needed because color distance calculations are easier in RGB space.
 function hexToRgb(hex: string): [number, number, number] {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
@@ -8,6 +10,7 @@ function hexToRgb(hex: string): [number, number, number] {
   return [r, g, b];
 }
 
+// Euclidean distance formula
 function calculateDistance(
   color1: [number, number, number],
   color2: [number, number, number]
@@ -19,13 +22,14 @@ function calculateDistance(
   );
 }
 
+// computes distance, sorts by smallest distance and returns the first three
 export async function findClosestColors(
   hexColor: string
 ): Promise<ColorMatch[]> {
   const targetRgb = hexToRgb(hexColor);
 
   const colorMatches = sherwinPaintColors
-    .filter((color) => color.hex) // Skip colors without hex values
+    .filter((color) => color.hex) // Skip colors without hex values (API colors scraped from is missing hex on some values)
     .map((color) => ({
       name: color.name,
       hex: color.hex,
